@@ -22,10 +22,10 @@ function App() {
               <MenuItem key={item.id} item={item} addItem={addItem} />
             ))}
           </div>
-        </div>   
+        </div>
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
           <OrderContents order={order} />
-          <OrderTotal/>
+          <OrderTotal order={order} />
         </div>
       </main>
     </>
