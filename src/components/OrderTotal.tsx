@@ -21,12 +21,12 @@ export default function OrderTotal({ order }: OrderTotalProps) {
         </p>
         <p>
           Propina: {""}
-          <span className="font-bold">{formatCurrency}</span>
+          <span className="font-bold">{}</span>
         </p>
 
         <p>
           Total a pagar: {""}
-          <span className="font-bold">{formatCurrency}</span>
+          <span className="font-bold">{}</span>
         </p>
       </div>
       <button></button>
