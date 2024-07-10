@@ -6,8 +6,8 @@ import OrderTotal from "./components/OrderTotal";
 import TipPercentageForm from "./components/TipPercentageForm";
 
 function App() {
-  const { order, addItem, removeItem, tip, setTip } = useOrder();  
-  
+  const { order, addItem, removeItem, tip, setTip, placeOrder } = useOrder();
+
   return (
     <>
       <header className="bg-teal-500 py-5">
@@ -25,9 +25,15 @@ function App() {
           </div>
         </div>
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-          <OrderContents order={order} removeItem={removeItem} />
-          <TipPercentageForm setTip={setTip} />
-          <OrderTotal order={order} tip={tip} />
+          {order.length > 0 ? (
+            <>
+              <OrderContents order={order} removeItem={removeItem} />
+              <TipPercentageForm setTip={setTip} tip={tip} />
+              <OrderTotal order={order} tip={tip} placeOrder={placeOrder} />
+            </>
+          ) : (
+            <p className="text-center">La orden está vacía</p>
+          )}
         </div>
       </main>
     </>
